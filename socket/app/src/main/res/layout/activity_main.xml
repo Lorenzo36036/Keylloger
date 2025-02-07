@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Teclas detectadas:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonConnect" />
+
     <EditText
         android:id="@+id/inputIp"
         android:layout_width="321dp"
@@ -19,6 +30,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/inputPort"
+        android:layout_width="327dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:hint="Enter Port"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputIp" />
 
     <Button
         android:id="@+id/buttonConnect"
@@ -28,25 +50,20 @@
         android:text="start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputIp"
-        app:layout_constraintVertical_bias="0.475" />
+        app:layout_constraintTop_toBottomOf="@+id/inputPort"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/outputMessage"
-        android:layout_width="406dp"
-        android:layout_height="204dp"
-        android:layout_marginTop="96dp"
-        android:scrollbarTrackVertical="true"
-        android:scrollbar
-        android:textSize="21sp"
-        app:layout_constraintTop_toBottomOf="@+id/buttonConnect"
-        tools:layout_editor_absoluteX="2dp" />
-
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier"
+        android:id="@+id/textAreaKeylloger"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:barrierDirection="left" />
+        android:layout_marginTop="40dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
