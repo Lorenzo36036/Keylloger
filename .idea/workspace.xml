@@ -5,7 +5,17 @@
       <config />
     </shared>
     <layouts>
+      <layout url="file://$PROJECT_DIR$/socket/app/src/main/res/layout/activity_client_view.xml">
+        <config>
+          <theme>@style/Theme.Socket</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/socket/app/src/main/res/layout/activity_main.xml">
+        <config>
+          <theme>@style/Theme.Socket</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/socket/app/src/main/res/layout/activity_menu_view2.xml">
         <config>
           <theme>@style/Theme.Socket</theme>
         </config>
@@ -21,8 +31,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/socket/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/socket/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/socket/app/src/main/java/com/example/socket/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/socket/app/src/main/java/com/example/socket/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/socket/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/socket/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/socket/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +67,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="_Designer_Tab" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -73,12 +86,17 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;localizacion&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;E:/Github/Keylloger/socket/settings.gradle.kts&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="android.template.-796379453">
+      <recent name="com.example.socket" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="socket.app.main" />
